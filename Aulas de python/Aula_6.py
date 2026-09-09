@@ -1,6 +1,6 @@
 import re, os
 
-exer = 11
+exer = 15
 #exer = input("Digite um exercício: ")
 
 if exer == 1:
@@ -33,7 +33,7 @@ elif exer == 4:
     resultado = re.search(padrao, texto)
     print(f"O codigo é {resultado.group()}")
 
-elif exer == 5: #exercicio de Debug
+elif exer == 5: #exercicio de debug
     #import re 
  
     #padrao = r"[0-9]+" 
@@ -48,7 +48,7 @@ elif exer == 5: #exercicio de Debug
     print(encontrado1) 
     print(encontrado2)
 
-elif exer == 6: #exercicio de Debug
+elif exer == 6: #exercicio de debug
     #import re 
  
     padrao = r"\S+@\S+\.\S+" 
@@ -159,6 +159,45 @@ elif exer == 11:
 
     padrao = r"AT-\d{4}-\d{4}"
     protocolos = re.findall(padrao, texto)
-    
+
     print(f"Os protocolos são: {protocolos}")
 
+elif exer == 12:
+    caminho = os.path.dirname(os.path.abspath(__file__))
+    arquivo = os.path.join(caminho,"arquivos", "erros.txt")
+    with open(arquivo, "r", encoding="utf-8") as f:
+        texto = f.read()
+    padrao = r"ERRO-\d{3}"
+    erros = re.findall(padrao, texto)
+    print(f"Os erros foram: {erros}")
+
+elif exer == 13:
+    caminho = os.path.dirname(os.path.abspath(__file__))
+    arquivo = os.path.join(caminho,"arquivos", "acessos.txt")
+    with open(arquivo, "r", encoding="utf-8") as f:
+        texto = f.read()
+
+    padrao = r"(?<==)[a-z0-9_]+"
+    usuarios = re.findall(padrao, texto)
+    print(f"Os usuarios do sistema são: {usuarios}")
+    
+elif exer == 14:
+    caminho = os.path.dirname(os.path.abspath(__file__))
+    arquivo = os.path.join(caminho,"arquivos", "programa.txt")
+    with open(arquivo, "r", encoding="utf-8") as f:
+        texto = f.read()
+    padrao = r"[A-Z]+"
+    categorias = re.findall(padrao, texto)
+    print(f"As categorias são: {categorias}")
+
+elif exer == 15: #exercicio de debug
+    #import re 
+ 
+    padrao = r"ERRO-[0-9]{3}" 
+    
+    with open("erros.txt", "r", encoding="utf-8") as arquivo: 
+        texto = arquivo 
+    
+    encontrado = re.findall(padrao, texto) 
+    
+    print(encontrado)
