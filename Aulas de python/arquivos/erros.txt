@@ -1,0 +1,8 @@
+[08:15:22] INFO - Programa iniciado 
+[08:15:24] INFO - Arquivo configuracao.txt carregado 
+[08:16:03] ERRO-404 - Arquivo usuarios.csv não encontrado 
+[08:16:18] AVISO - Nova tentativa de leitura 
+[08:16:20] ERRO-403 - Acesso negado ao arquivo 
+[08:17:45] INFO - Usuário administrador conectado 
+[08:18:02] ERRO-500 - Falha interna no processamento 
+[08:18:10] INFO - Programa encerrado
