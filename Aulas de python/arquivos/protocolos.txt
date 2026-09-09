@@ -1,0 +1,13 @@
+Registro de atendimentos 
+ 
+Protocolo: AT-2026-5832 
+Responsável: Mariana Souza 
+E-mail: mariana.souza@email.com 
+ 
+Protocolo: AT-2026-7419 
+Responsável: Carlos Lima 
+E-mail: carlos.lima@exemplo.org 
+ 
+Protocolo: AT-2025-1843 
+Responsável: Fernanda Alves 
+E-mail: fernanda.alves@teste.com.br

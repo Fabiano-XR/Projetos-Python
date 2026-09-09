@@ -1,8 +1,9 @@
-import re
+import re, os
 
-exer = input("Digite um exercício: ")
+exer = 11
+#exer = input("Digite um exercício: ")
 
-if exer == "1":
+if exer == 1:
     padrao = re.compile(r'[0-9]{4}')  #input("Digite um padrão: ")
 
     texto = "O pedido 5832 foi enviado para o setor 47."
@@ -12,27 +13,27 @@ if exer == "1":
     resultados = re.findall(padrao, texto)
     print(f"Todos os resultados: {resultados}")
 
-elif exer == "2":
+elif exer == 2:
     padrao = re.compile(r'[\w]+[@][\w]+[.][\w]+')
     texto = "O contato informado pelo cliente foi atendimento@exemplo.com."
 
     print(f"Todos os resultados: {re.findall(padrao, texto)}")
 
-elif exer == "3":
+elif exer == 3:
     padrao = re.compile(r'[\d]{2}[/][\d]{2}[/][\d]{4}')
     texto = "A atividade foi marcada para 18/09/2026, às 19 horas."
 
     resultado = re.findall(padrao, texto)
     print(f"A data é {resultado}")
 
-elif exer == "4":
+elif exer == 4:
     texto = "O produto selecionado possui o código ABC-4821 e está disponível."
     padrao = re.compile(r"[A-Z]{3}[-][\d]{4}")
 
     resultado = re.search(padrao, texto)
     print(f"O codigo é {resultado.group()}")
 
-elif exer == "5": #exercicio de Debug
+elif exer == 5: #exercicio de Debug
     #import re 
  
     #padrao = r"[0-9]+" 
@@ -47,7 +48,7 @@ elif exer == "5": #exercicio de Debug
     print(encontrado1) 
     print(encontrado2)
 
-elif exer == "6": #exercicio de Debug
+elif exer == 6: #exercicio de Debug
     #import re 
  
     padrao = r"\S+@\S+\.\S+" 
@@ -63,7 +64,7 @@ elif exer == "6": #exercicio de Debug
     print(encontrado1) 
     print(encontrado2)
 
-elif exer == "7":
+elif exer == 7:
     texto = """ 
     Mariana realizou sua inscrição no evento. 
     E-mail informado: mariana.silva@email.com 
@@ -82,7 +83,7 @@ elif exer == "7":
     print(f"O primeiro email encontrado é {resultado.group()}")
     print(f"Todos os emails encontrados são {resultados}")
 
-elif exer == "8":
+elif exer == 8:
     padrao = re.compile(r"\d{4}")
     texto = """ 
     Machado de Assis (1839-1908) - escritor brasileiro. 
@@ -104,7 +105,7 @@ elif exer == "8":
     resultados = re.findall(padrao, texto)
     print(f"Anos encontrados são: {resultados}")
 
-elif exer == "9":
+elif exer == 9:
     texto = """ 
     Biblioteca Machado de Assis 
     Telefone: (21) 3456-7821 
@@ -125,7 +126,7 @@ elif exer == "9":
     resultados = re.findall(padrao, texto)
     print(f"Os numeros encontrados são: {resultados}")
 
-elif exer == "10": #exercicio de debug
+elif exer == 10: #exercicio de debug
     #import re 
  
     #padrao = r"\([0-9]{2}\) [0-9]{5}-[0-9]{4}"
@@ -149,5 +150,15 @@ elif exer == "10": #exercicio de debug
     print(encontrado1) 
     print(encontrado2)
 
-#elif exer == "11":
+elif exer == 11:
+    caminho = os.path.dirname(os.path.abspath(__file__)) #onde ta o script
+    arquivo = os.path.join(caminho,"arquivos", "protocolos.txt") #adiciona onde quero ir
+    with open(arquivo, "r", encoding="utf-8") as f:
+        texto = f.read()
+    print(f"O conteudo do arquivo é {texto}")
+
+    padrao = r"AT-\d{4}-\d{4}"
+    protocolos = re.findall(padrao, texto)
     
+    print(f"Os protocolos são: {protocolos}")
+
