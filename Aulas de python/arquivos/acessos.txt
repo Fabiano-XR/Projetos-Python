@@ -1,0 +1,6 @@
+[09:10:15] LOGIN - usuario=mariana22 - acesso permitido 
+[09:14:32] LOGIN - usuario=carlos_dev - acesso permitido 
+[09:17:08] LOGOUT - usuario=mariana22 - sessão encerrada 
+[09:22:41] LOGIN - usuario=fernanda01 - acesso permitido 
+[09:31:19] LOGIN - usuario=joao_python - acesso negado 
+[09:42:03] LOGOUT - usuario=carlos_dev - sessão encerrada

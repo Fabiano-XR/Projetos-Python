@@ -1,0 +1,8 @@
+[10:00:01] INFO - sistema iniciado 
+[10:00:04] INFO - banco de dados conectado 
+[10:01:17] WARNING - resposta demorou 8 segundos 
+[10:02:35] ERROR - conexão interrompida 
+[10:02:40] INFO - tentando nova conexão 
+[10:02:43] ERROR - conexão recusada 
+[10:03:12] WARNING - segunda tentativa iniciada 
+[10:03:18] INFO - conexão restabelecida
