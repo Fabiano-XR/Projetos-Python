@@ -1,0 +1,6 @@
+[08:12:15] LOGIN - usuario=mariana22 - status=SUCESSO 
+[08:18:42] LOGIN - usuario=carlos_dev - status=FALHA 
+[08:25:10] LOGIN - usuario=fernanda01 - status=SUCESSO 
+[08:31:27] LOGIN - usuario=joao_python - status=FALHA 
+[08:42:03] LOGIN - usuario=amanda15 - status=SUCESSO 
+[08:55:19] LOGIN - usuario=lucas_dev - status=FALHA

@@ -1,6 +1,6 @@
-import re, os
+import re, os, random
 
-exer = 15
+exer = 18
 #exer = input("Digite um exercício: ")
 
 if exer == 1:
@@ -173,7 +173,7 @@ elif exer == 12:
 
 elif exer == 13:
     caminho = os.path.dirname(os.path.abspath(__file__))
-    arquivo = os.path.join(caminho,"arquivos", "acessos.txt")
+    arquivo = os.path.join(caminho,"arquivos", "acessos_1.txt")
     with open(arquivo, "r", encoding="utf-8") as f:
         texto = f.read()
 
@@ -192,12 +192,91 @@ elif exer == 14:
 
 elif exer == 15: #exercicio de debug
     #import re 
- 
+
+    caminho = os.path.dirname(os.path.abspath(__file__))
+    arquivo = os.path.join(caminho,"arquivos", "erros.txt")
     padrao = r"ERRO-[0-9]{3}" 
     
-    with open("erros.txt", "r", encoding="utf-8") as arquivo: 
-        texto = arquivo 
-    
+    with open(arquivo, "r", encoding="utf-8") as f: 
+        #texto = f 
+        texto = f.read()
+        #Faltava o .read() para que possa ler oq tem em f
+
     encontrado = re.findall(padrao, texto) 
     
     print(encontrado)
+
+elif exer == 16:
+    #Descreva o funcionamento do programa e qual será o seu resultado
+    numeros = [] 
+ 
+    for i in range(10): 
+        numero = random.randint(0, 999999) 
+        numeros.append(numero) 
+    
+    with open("numeros_1.txt", "w", encoding="utf-8") as arquivo: 
+        for i in range(len(numeros)): 
+            arquivo.write(f"{numeros[i]}\n") 
+    
+    with open("numeros_1.txt", "r", encoding="utf-8") as arquivo: 
+        texto = arquivo.read() 
+    
+    print(texto)
+    #gera 10 numeros aleatorios, escreve eles em numeros.txt e depois lê o arquivo e mostra na tela
+
+elif exer == 17:
+    caminho = os.path.dirname(os.path.abspath(__file__))
+    arquivo = os.path.join(caminho,"arquivos", "acessos_2.txt")
+
+    sucesso = []
+    falha = []
+    padrao1 = r".+SUCESSO$"
+    padrao2 = r".+FALHA$"
+
+    with open(arquivo, "r", encoding="utf-8") as f:
+        texto = f.readlines()
+
+        for linha in texto:
+            linha = linha.rstrip()
+            ocorrencia = re.search(padrao1, linha)
+            if ocorrencia:
+                sucesso.append(linha)
+            else:
+                falha.append(linha)
+
+    print(f"\n Tivemos {len(sucesso)} acesso bem sucedidos.")
+    for i in range(len(sucesso)):
+        print(f"{sucesso[i]}\n")
+
+    print(f"\n Tivemos {len(falha)} acesso com falhas.")
+    for i in range(len(falha)):
+        print(f"{falha[i]}\n")    
+
+elif exer == 18:
+    numero = maior_num = 0
+    menor_num = 100000
+    script = os.path.dirname(os.path.abspath(__file__))
+    caminho = os.path.join(script,"arquivos", "numeros_2.txt")
+
+    #A)
+    with open(caminho, "w", encoding="utf-8") as arquivo:
+        for i in range(1000):
+            num = random.randint(0, 999999)
+            arquivo.write(f"{num}\n")
+
+    with open(caminho, "r", encoding="utf-8") as arquivo:
+        texto = arquivo.readlines()
+
+    #B)
+    for i in texto:
+        numero = int(i.strip())
+        #numero = int(numero)
+        if maior_num < numero:
+            maior_num = numero
+        if menor_num > numero:
+            menor_num = numero
+
+    print(f"O maior numero é {maior_num}")
+    print(f"O maior numero é {menor_num}")
+
+    
