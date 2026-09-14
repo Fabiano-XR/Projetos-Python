@@ -253,13 +253,12 @@ elif exer == 17:
         print(f"{falha[i]}\n")    
 
 elif exer == 18:
-    numero = maior_num = len_tres_alg = tres_alg = 0
+    numero = maior_num = len_tres_alg = tres_alg = result_tres = 0
     menor_num = 100000
     dois_alg = []
     quatro_alg = []
     
-    script = os.path.dirname(os.path.abspath(__file__))
-    caminho = os.path.join(script,"arquivos", "numeros_2.txt")
+    caminho = os.path.join(os.path.dirname(os.path.abspath(__file__)),"arquivos", "numeros_2.txt")
 
     #A)
     with open(caminho, "w", encoding="utf-8") as arquivo:
@@ -293,12 +292,13 @@ elif exer == 18:
                 if ocorrencia:
                     quatro_alg.append(ocorrencia.group())
 
-    result_tres = tres_alg/len_tres_alg
+    if tres_alg:
+        result_tres = tres_alg/len_tres_alg
 
     print(f"O maior numero é {maior_num}")
     print(f"O menor numero é {menor_num}")
     print(f"Foram encontrados {len(dois_alg)} numeros com dois algarismos.")
-    print(f"A uma media de {result_tres:.0f} numeros com tres algarismos.")
+    print(f"A media de numeros com tres algaritmos é {result_tres:.0f}.")
     print(f"Foram encontrados {len(quatro_alg)} numeros com quatro algarismos.")
 
 
