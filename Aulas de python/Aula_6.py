@@ -1,6 +1,6 @@
 import re, os, random
 
-exer = 18
+exer = 19
 #exer = input("Digite um exercício: ")
 
 if exer == 1:
@@ -301,5 +301,17 @@ elif exer == 18:
     print(f"A media de numeros com tres algaritmos é {result_tres:.0f}.")
     print(f"Foram encontrados {len(quatro_alg)} numeros com quatro algarismos.")
 
+elif exer == 19:
+    caminho = os.path.join(os.path.dirname(os.path.abspath(__file__)),"arquivos", "autores_1.txt")
 
-    
+    with open(caminho, "r", encoding="utf-8") as arquivo:
+        texto = arquivo.read()
+
+    autores = re.findall(r"[\w ]+(?= \()", texto)
+    print(autores)
+    datas = re.findall(r"\(\d{2}/\d{2}/\d{4}(?:\D+\d{2}/\d{2}/\d{4})?\)", texto)
+    print(datas)
+    celulares = re.findall(r"\(\d{2}\) \d{5}-\d{4}", texto)
+    print(celulares)
+    emails = re.findall(r"(?<)", texto)
+    print(emails)
